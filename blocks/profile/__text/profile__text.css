@@ -1,0 +1,28 @@
+.profile__text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #FFFFFF;
+
+  padding-top: 16px;
+
+
+  text-overflow: ellipsis;
+
+}
+
+@media (max-width: 425px) {
+
+  .profile__text {
+    padding-top: 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+
+  }
+}

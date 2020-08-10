@@ -1,0 +1,19 @@
+@import url(./__image/element__image.css);
+@import url(./__heart/element__heart.css);
+@import url(./__description/element__description.css);
+@import url(./__title/element__title.css);
+
+.element {
+  width: 282px;
+  height: 361px;
+
+  background-color: #FFFFFF;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+
+
+
+}

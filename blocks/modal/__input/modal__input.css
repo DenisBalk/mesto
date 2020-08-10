@@ -1,0 +1,28 @@
+@import url(./_type/modal__input_type_name.css);
+@import url(./_type/modal__input_type_status.css);
+
+.modal__input {
+
+  width: 358px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
+
+  border: none;
+  border-bottom: 1px solid #f1f1f1;
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 530px) {
+
+  .modal__input {
+    max-width: 100%;
+
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

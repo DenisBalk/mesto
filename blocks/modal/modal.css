@@ -1,0 +1,31 @@
+@import url(./__container/modal__container.css);
+@import url(./__close-button/modal__close-button.css);
+@import url(./__btn-save/modal__btn-save.css);
+@import url(./__title/modal__title.css);
+@import url(./__input/modal__input.css);
+
+
+
+
+.modal {
+  font-family: Inter;
+
+  color: #FFFFFF;
+
+  position: fixed;
+  top: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  height: 100%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+
+

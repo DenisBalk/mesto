@@ -1,0 +1,17 @@
+.profile__avatar {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  min-width: 127px;
+  height: 127px;
+
+  text-decoration: none;
+  color: #fff;
+  background-image: url(../../../images/Avatar.png);
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}

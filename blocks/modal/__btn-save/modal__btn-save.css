@@ -1,0 +1,33 @@
+.modal__btn-save {
+  width: 358px;
+  height: 50.15px;
+
+  background: #000000;
+  border-radius: 2px;
+  border: none;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #FFFFFF;
+  margin-top: 48px;
+
+  box-sizing: border-box;
+}
+
+.modal__btn-save:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 530px) {
+
+  .modal__btn-save {
+    max-width: 100%;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
