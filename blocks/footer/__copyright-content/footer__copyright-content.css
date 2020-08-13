@@ -19,3 +19,11 @@
 
   }
 }
+@media (max-width: 400px) {
+  .footer__copyright-content {
+
+    font-size: 14px;
+    line-height: 17px;
+
+  }
+}
