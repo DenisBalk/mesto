@@ -40,7 +40,7 @@
 @media (max-width: 425px) {
 
   .profile__add-button {
-    width: 100%;
+    min-width: 282px;
     margin-top: 36px;
 
   }
