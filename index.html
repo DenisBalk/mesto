@@ -11,6 +11,7 @@
   <div class="page">
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип место">
+      <hr class="header-line">
     </header>
     <main class="contents">
       <section class="profile">
@@ -18,11 +19,11 @@
         <div class="profile__info">
           <div class="profile__title-btn">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button"></button>
+            <button type="button" class="profile__edit-button"></button>
           </div>
           <p class="profile__text"> Исследователь </p>
         </div>
-        <div class="profile__add-button"></div>
+        <button class="profile__add-button"></button>
       </section>
       <section class="elements">
         <div class="element" >
@@ -38,7 +39,7 @@
 
           <div class="element__description">
             <p class="element__title"> Эльбрус</p>
-            <button class="element__heart"></button>
+            <button  type="button" class="element__heart"></button>
           </div>
         </div>
 
@@ -56,7 +57,7 @@
 
           <div class="element__description">
             <p class="element__title"> Эльбрус</p>
-            <button class="element__heart"></button>
+            <button type="button"  class="element__heart"></button>
           </div>
         </div>
 
@@ -65,7 +66,7 @@
 
           <div class="element__description">
             <p class="element__title">Домбай</p>
-            <button class="element__heart"></button>
+            <button type="button"  class="element__heart"></button>
           </div>
         </div>
 
@@ -74,7 +75,7 @@
 
           <div class="element__description">
             <p class="element__title">Карачаевск</p>
-            <button class="element__heart"></button>
+            <button type="button"  class="element__heart"></button>
           </div>
         </div>
 
@@ -97,7 +98,7 @@
       <form name="modal-form" class="modal__form" action="#">
         <h2 class="modal__title">Редактировать профиль</h2>
         <input name="modal-input-name" type="text" class="modal__input modal__input_type_name" value="Жак-Ив Кусто">
-        <input name="modal__input-status" type="text" class="modal__input modal__input_type_status" value="Исследователь океана">
+        <input name="modal-input-status" type="text" class="modal__input modal__input_type_status" value="Исследователь океана">
         <button type="submit" class="modal__btn-save">Сохранить</button>
       </form>
     </div>
