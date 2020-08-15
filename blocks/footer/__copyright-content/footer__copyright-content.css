@@ -24,6 +24,16 @@
 
     font-size: 14px;
     line-height: 17px;
+    
+    
+   
+
+  }
+}
+@media (max-width: 320px) {
+  .footer__copyright-content {
+
+    margin-left: 10px;
 
   }
 }
