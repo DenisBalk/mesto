@@ -18,17 +18,15 @@ function toggleModal() {
 
   modal.classList.toggle('modal_is-open');
 }
-openModalButton.addEventListener('click', toggleModal);
-closeModalButton.addEventListener('click', toggleModal);
-form.addEventListener('submit', (e) => {
+function formSubmitHandler(e) {
   e.preventDefault();
-
   profileName.textContent = inputName.value;
   profileText.textContent = inputStatus.value;
-
   toggleModal();
+}
 
-})
-
+openModalButton.addEventListener('click', toggleModal);
+closeModalButton.addEventListener('click', toggleModal);
+form.addEventListener('submit', formSubmitHandler);
 
 
