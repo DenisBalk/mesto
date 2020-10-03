@@ -16,10 +16,12 @@
 
   outline: none;
 
+
+
 }
 
 .modal__close-button:hover {
-  opacity: 0.6;;
+  opacity: 0.6;
 }
 
 @media (max-width: 425px) {
@@ -32,3 +34,4 @@
 
   }
 }
+

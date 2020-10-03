@@ -6,7 +6,7 @@
   object-position: top;
   margin-left: 0px;
   margin-top: 0px;
-  
+
 
   padding-bottom: 40px;
 
@@ -26,9 +26,8 @@
 
   .header__logo {
     width: 103px;
-    
+    padding-left: 0px;
     padding-bottom: 31px;
-    padding-left: 27px;
 
   }
 }

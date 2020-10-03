@@ -2,10 +2,13 @@
 @import url(./__heart/element__heart.css);
 @import url(./__description/element__description.css);
 @import url(./__title/element__title.css);
+@import url(./__delete/element__delete.css);
+@import url(./__heart/element__heart_black.css);
+
 
 .element {
   width: 282px;
-  
+  height: 361px;
 
   background-color: #FFFFFF;
 
@@ -13,7 +16,6 @@
 
   margin-bottom: 20px;
 
-
-
+  position: relative;
 
 }

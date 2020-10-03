@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  
   <title>Место</title>
 </head>
 <body>
@@ -12,96 +11,81 @@
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип место">
     </header>
-    <main class="contents">
+    <main class="content">
       <section class="profile">
         <div class="profile__avatar"></div>
         <div class="profile__info">
           <div class="profile__title-btn">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__edit-button"></button>
+            <h1 class="profile__title">
+              Жак-Ив Кусто
+            </h1>
+            <div class="profile__edit-button"></div>
           </div>
-          <p class="profile__text"> Исследователь </p>
+          <p class="profile__text">
+            Исследователь океана
+          </p>
         </div>
-        <button type="button" class="profile__add-button"></button>
+        <div class="profile__add-button"></div>
       </section>
       <section class="elements">
-        <div class="element" >
-          <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.png" alt="Здесь должна быть картинка">
-          <div class="element__description">
-            <p class="element__title">Карачаевск</p>
-            <button type="button" class="element__heart"></button>
-          </div>
-        </div>
-
-        <div class="element" >
-          <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Здесь должна быть картинка">
-
-          <div class="element__description">
-            <p class="element__title"> Эльбрус</p>
-            <button  type="button" class="element__heart"></button>
-          </div>
-        </div>
-
-        <div class="element" >
-          <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Здесь должна быть картинка">
-
-          <div class="element__description">
-            <p class="element__title">Домбай</p>
-            <button  type="button" class="element__heart"></button>
-          </div>
-        </div>
-
-        <div class="element" >
-          <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Здесь должна быть картинка">
-
-          <div class="element__description">
-            <p class="element__title"> Эльбрус</p>
-            <button type="button"  class="element__heart"></button>
-          </div>
-        </div>
-
-        <div class="element" >
-          <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Здесь должна быть картинка">
-
-          <div class="element__description">
-            <p class="element__title">Домбай</p>
-            <button type="button"  class="element__heart"></button>
-          </div>
-        </div>
-
-        <div class="element" >
-          <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.png" alt="Здесь должна быть картинка">
-
-          <div class="element__description">
-            <p class="element__title">Карачаевск</p>
-            <button type="button"  class="element__heart"></button>
-          </div>
-        </div>
 
       </section>
 
     </main>
-
     <footer class="footer">
 
-      <p class="footer__copyright-content">&copy; 2020. Далецкий Денис</p>
+      <p class="footer__copyright-content">&copy; 2020. Денис Далецкий</p>
 
     </footer>
 
   </div>
 
-  <section class="modal">
+  <section class="modal modal_type_edit-profile">
     <div class="modal__container">
-      <!--Подскажите насчет  альтернативных шрифтов , шрифты в модалке заданы -->
-      <button type="button" class="modal__close-button"> </button>
-      <form name="modal-form" class="modal__form" action="#">
+      <button class="modal__close-button"> </button>
+      <form class="modal__form" action="#">
         <h2 class="modal__title">Редактировать профиль</h2>
-        <input name="modal-input-name" type="text" class="modal__input modal__input_type_name" value="Жак-Ив Кусто">
-        <input name="modal-input-status" type="text" class="modal__input modal__input_type_status" value="Исследователь океана">
+        <input name="modal__input-name" type="text" class="modal__input modal__input_type_name" value="Жак-Ив Кусто">
+        <input name="modal__input-status" type="text" class="modal__input modal__input_type_status" value="Исследователь океана">
         <button type="submit" class="modal__btn-save">Сохранить</button>
       </form>
     </div>
   </section>
+
+
+  <section class="modal modal_type_add-card">
+    <div class="modal__container">
+      <button class="modal__close-button"> </button>
+      <form class="modal__form" action="#">
+        <h2 class="modal__title">Новое место</h2>
+        <input name="modal__input-name" type="text" class="modal__input modal__input_type_place" value="Название">
+        <input name="modal__input-status" type="text" class="modal__input modal__input_type_url" value="Ссылка на картинку">
+        <button type="submit" class="modal__btn-save">Создать</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="modal modal_type_image">
+    <div class="modal__container-image">
+      <button class="modal__close-button"> </button>
+      <img class="modal__image" src="" alt="Здесь должна быть картинка"></img>
+      <h3 class="modal__title-image"></h3>
+    </div>
+  </section>
+
+  <template class="element-template">
+    <div class="element" >
+      <img class="element__image" src="" alt="Здесь должна быть картинка">
+      <button class="element__delete"></button>
+
+      <div class="element__description">
+        <p class="element__title"></p>
+        <button class="element__heart"></button>
+      </div>
+    </div>
+  </template>
+
+
   <script src="./index/index.js"></script>
 </body>
 </html>
