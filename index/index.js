@@ -21,7 +21,7 @@ const inputUrl = formAddCard.querySelector('.modal__input_type_url');
 //Поля для вывода
 const profileName = document.querySelector('.profile__title');
 const profileText = document.querySelector('.profile__text');
-
+const elementTemplate = document.querySelector('.element-template');
 
 const addCardCloseModalButton = addCardModal.querySelector('.modal__close-button');
 const editProfileCloseModalButton = editProfileModal.querySelector('.modal__close-button');
@@ -119,19 +119,19 @@ function handleDeleteClick(e){
 };
 
 function handleLikeClick(e){
-  e.preventDefault();
+  
   e.target.classList.toggle('element__heart_black');
 };
 
 function handleImageClick(e){
-  e.preventDefault();
+  
   showImage(e);
   toggleModal(imageShowModal);
 };
 
 
 function showImage(e) {
-  e.preventDefault();
+  
   imageShowModal.querySelector('img').src = e.target.src;
   imageShowModal.querySelector('h3').textContent = e.target.closest('.element').querySelector('.element__title').textContent;
 
@@ -139,7 +139,7 @@ function showImage(e) {
 
 //Функция для добавления карточек
 function createCard(data) {
-  const elementTemplate = document.querySelector('.element-template');
+ 
   const card = elementTemplate.content.cloneNode(true);
   const cardLikeButton = card.querySelector('.element__heart');
   const cardDeleteButton = card.querySelector('.element__delete');
