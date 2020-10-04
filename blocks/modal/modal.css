@@ -1,11 +1,21 @@
-@import url(./__container/modal__container.css);
-@import url(./__close-button/modal__close-button.css);
 @import url(./__btn-save/modal__btn-save.css);
-@import url(./__title/modal__title.css);
-@import url(./__input/modal__input.css);
-@import url(./__container/modal__container-image.css);
+@import url(./__btn-undisabled/modal__btn-undisabled.css);
+@import url(./__close-button/modal__close-button.css);
+@import url(./__container/modal__container.css);
+@import url(./__error-visible/modal__error-visible.css);
 @import url(./__image/modal__image.css);
+@import url(./__input/modal__input.css);
+@import url(./__input/_type/modal__input_type_error.css);
+@import url(./__input/_type/modal__input_type_name.css);
+@import url(./__input/_type/modal__input_type_place.css);
+@import url(./__input/_type/modal__input_type_status.css);
+@import url(./__input/_type/modal__input_type_valid.css);
 @import url(./__title-image/modal__title-image.css);
+@import url(./__title/modal__title.css);
+@import url(./_is-open/modal_is-open.css);
+@import url(./__container-image/modal__container-image.css);
+@import url(./__error-visible/modal__error-visible.css);
+
 
 
 
@@ -22,7 +32,7 @@
 
   height: 100%;
   width: 100%;
-  display: none;
+
   justify-content: center;
   align-items: center;
 
@@ -34,9 +44,3 @@
 
 
 }
-
-
-
-
-
-

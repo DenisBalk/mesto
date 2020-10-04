@@ -16,11 +16,12 @@
   margin-top: 48px;
 
   box-sizing: border-box;
+  /* opacity: 0.8; */
 }
 
-.modal__btn-save:hover {
+/* .modal__btn-save:hover {
   opacity: 0.8;
-}
+} */
 
 @media (max-width: 530px) {
 

@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
+
+
   <title>Место</title>
+
 </head>
 <body>
   <div class="page">
     <header class="header">
+
       <img class="header__logo" src="./images/logo.svg" alt="Логотип место">
+
     </header>
+
     <main class="content">
+
       <section class="profile">
+
         <div class="profile__avatar"></div>
+
         <div class="profile__info">
           <div class="profile__title-btn">
             <h1 class="profile__title">
@@ -21,20 +30,26 @@
             </h1>
             <div class="profile__edit-button"></div>
           </div>
+
           <p class="profile__text">
             Исследователь океана
           </p>
         </div>
+
         <div class="profile__add-button"></div>
+
       </section>
+
+
       <section class="elements">
 
       </section>
 
     </main>
+
     <footer class="footer">
 
-      <p class="footer__copyright-content">&copy; 2020. Денис Далецкий</p>
+      <p class="footer__copyright-content">&copy; 2020. Далецкий Денис </p>
 
     </footer>
 
@@ -43,11 +58,13 @@
   <section class="modal modal_type_edit-profile">
     <div class="modal__container">
       <button class="modal__close-button"> </button>
-      <form class="modal__form" action="#">
+      <form class="modal__form" action="#" novalidate>
         <h2 class="modal__title">Редактировать профиль</h2>
-        <input name="modal__input-name" type="text" class="modal__input modal__input_type_name" value="Жак-Ив Кусто">
-        <input name="modal__input-status" type="text" class="modal__input modal__input_type_status" value="Исследователь океана">
-        <button type="submit" class="modal__btn-save">Сохранить</button>
+        <input name="modal__input-name" type="text" class="modal__input modal__input_type_name" value="Жак-Ив Кусто" required minlength="2" maxlength="40" autocomplete="off">
+        <span class="modal__input__error" id="modal__input-name-error"></span>
+        <input name="modal__input-status" type="text" class="modal__input modal__input_type_status" value="Исследователь океана" required minlength="2" maxlength="200" autocomplete="off">
+        <span class="modal__input__error" id="modal__input-status-error"></span>
+        <button type="submit" class="modal__btn-save" >Сохранить</button>
       </form>
     </div>
   </section>
@@ -56,11 +73,13 @@
   <section class="modal modal_type_add-card">
     <div class="modal__container">
       <button class="modal__close-button"> </button>
-      <form class="modal__form" action="#">
+      <form class="modal__form" action="#" novalidate>
         <h2 class="modal__title">Новое место</h2>
-        <input name="modal__input-name" type="text" class="modal__input modal__input_type_place" value="Название">
-        <input name="modal__input-status" type="text" class="modal__input modal__input_type_url" value="Ссылка на картинку">
-        <button type="submit" class="modal__btn-save">Создать</button>
+        <input name="modal__input-title" type="text" class="modal__input modal__input_type_place" placeholder="Название" required minlength="1" maxlength="30" autocomplete="off">
+        <span class="modal__input__error" id="modal__input-title-error"></span>
+        <input name="modal__input-url" type="url" class="modal__input modal__input_type_url" placeholder="Ссылка на картинку" required autocomplete="off">
+        <span class="modal__input__error" id="modal__input-url-error"></span>
+        <button type="submit" class="modal__btn-save" disabled>Создать</button>
       </form>
     </div>
   </section>
@@ -87,5 +106,6 @@
 
 
   <script src="./index/index.js"></script>
+  <script src="./index/validate.js"></script>
 </body>
 </html>

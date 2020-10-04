@@ -3,7 +3,8 @@
 @import url(./__description/element__description.css);
 @import url(./__title/element__title.css);
 @import url(./__delete/element__delete.css);
-@import url(./__heart/element__heart_black.css);
+@import url(./__heart/element__heart.css);
+@import url(./__heart/_black/element__heart_black.css);
 
 
 .element {
