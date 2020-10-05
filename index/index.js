@@ -48,11 +48,11 @@ const openModalWindow = (modalWindow) => {
   modalWindow.classList.add('modal_is-open');
 }
 
-
+const KeyEscape = 'Escape';
 
 const handleEscUp = (evt) => {
   const activePopup = document.querySelector('.modal_is-open');
-  if (evt.key === 'Escape') {
+  if (evt.key === KeyEscape) {
     closeModalWindow(activePopup);
   };
 };
