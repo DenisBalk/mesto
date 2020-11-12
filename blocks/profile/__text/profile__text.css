@@ -10,8 +10,13 @@
 
   padding-top: 16px;
 
+  max-width: 318px;
+
 
   text-overflow: ellipsis;
+
+  white-space: nowrap;
+  overflow: hidden;
 
 }
 

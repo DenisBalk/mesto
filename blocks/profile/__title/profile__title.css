@@ -9,7 +9,9 @@
   line-height: 56px;
 
   padding-top: 18px;
-
+  max-width: 295px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 
 

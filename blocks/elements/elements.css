@@ -8,12 +8,11 @@
   padding-top: 51px;
 
 
+
 }
 
-
-@media (max-width: 910px) {
-
-  .elements {
-    justify-content: space-evenly;
-  }
+.elements::after {
+  content: '';
+  width: 282px;
 }
+

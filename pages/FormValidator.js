@@ -1,4 +1,3 @@
-import { object } from './Constants.js';
 
 export class FormValidator{
 
@@ -8,11 +7,19 @@ export class FormValidator{
     this._inputSelector = parameters.inputSelector;
     this._inputValidClass = parameters.inputValidClass;
     this._inputErrorClass =parameters.inputErrorClass;
-    this._submitButtonSelector =parameters.submitButtonSelector;
+    this._submitButtonSelector = parameters.submitButtonSelector;
     this._inactiveButtonClass = parameters.inactiveButtonClass;
-    this._activeButtonClass =parameters.activeButtonClass;
-    this._errorClass =parameters.errorClass;
+    this._activeButtonClass = parameters.activeButtonClass;
+    this._errorClass = parameters.errorClass;
+    this._inputTitle = parameters.inputTitle;
+    this._inputUrl = parameters.inputUrl;
+    this._inputName = parameters.inputName;
+    this._inputStatus = parameters.inputStatus;
+    this._addCardModal = parameters.addCardModal;
+    this._editProfileModal = parameters.editProfileModal;
+    this._subButtonForAddCard = parameters.subButtonForAddCard;
   }
+
 
    //Обработчик форм
   _formsHandler = () => {
@@ -22,15 +29,16 @@ export class FormValidator{
     // Найдем все инпуты внутри формы
     this._inputs = Array.from(this._formElement.querySelectorAll(this._inputSelector));
     this._buttonSubmit = this._formElement.querySelector(this._submitButtonSelector);
-    this._inputsHandler(this._inputs,this._buttonSubmit, this._inputValidClass, this._inputErrorClass, this._errorClass, this._formElement,this._activeButtonClass,this._inactiveButtonClass)
+    this._inputsHandler()
   }
 
 
   _inputsHandler() {
     this._inputs.forEach((inputElement)=>{
       inputElement.addEventListener('input',()=>{
-        this._buttonValidation(this._inputs,this._buttonSubmit,this._activeButtonClass,this._inactiveButtonClass);
-        this._inputValidation(inputElement, this._inputValidClass, this._inputErrorClass, this._errorClass);
+        this._buttonValidation(this._inputs,this._buttonSubmit);
+        this._inputValidation(inputElement);
+
       });
     });
   };
@@ -64,6 +72,48 @@ export class FormValidator{
       this._errorElement.classList.add(this._errorClass);
     }
   };
+
+    // Убираем стили валидации
+  cardCheckValidStyle(){
+
+    if (this._inputTitle.classList.contains('modal__input_type_valid')){
+      this._inputTitle.classList.remove('modal__input_type_valid')
+    }
+    if (this._inputUrl.classList.contains('modal__input_type_valid')) {
+      this._inputUrl.classList.remove('modal__input_type_valid')
+    }
+
+    if (this._inputName.classList.contains('modal__input_type_valid')){
+      this._inputName.classList.remove('modal__input_type_valid')
+    }
+
+    if (this._inputStatus.classList.contains('modal__input_type_valid')) {
+      this._inputStatus.classList.remove('modal__input_type_valid')
+    }
+
+    if (this._inputTitle.classList.contains('modal__input_type_error')){
+      this._inputTitle.classList.remove('modal__input_type_error');
+      this._addCardModal.querySelector(`#modal__input-title-error`).textContent = '';
+    }
+    if (this._inputUrl.classList.contains('modal__input_type_error')){
+      this._inputUrl.classList.remove('modal__input_type_error');
+      this._addCardModal.querySelector(`#modal__input-url-error`).textContent = '';
+    }
+
+    if (this._inputName.classList.contains('modal__input_type_error')){
+      this._inputName.classList.remove('modal__input_type_error');
+      this._editProfileModal.querySelector(`#modal__input-name-error`).textContent = '';
+    }
+    if (this._inputStatus.classList.contains('modal__input_type_error')){
+      this._inputStatus.classList.remove('modal__input_type_error');
+      this._editProfileModal.querySelector(`#modal__input-status-error`).textContent = '';
+    }
+
+    this._subButtonForAddCard.disabled = true;
+    this._subButtonForAddCard.classList.remove('modal__btn-undisabled')
+
+  }
+  //-----------------------------------------------------------
 
   enableValidation = () => {
       this._formsHandler()

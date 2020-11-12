@@ -1,88 +1,56 @@
+import {openModalWindow, closeModalWindow} from './Utils.js';
+import { object } from './Constants.js';
+
 export class Card {
-  constructor(data) {
+  constructor(cardElement, data) {
+    this._cardElement = cardElement;
     this._link = data.link;
     this._title = data.name;
+    this._openModalWindow = openModalWindow;
+    this._closeModalWindow = closeModalWindow
+
   }
 
   _getTemplate() {
-    const cardElement =document.querySelector('.element-template').content.cloneNode(true);
-
+    const cardElement = this._cardElement.content.cloneNode(true);
     return cardElement;
   }
 
-  _handleLikeClick(e){
-    e.preventDefault();
-    e.target.classList.toggle('element__heart_black');
-  };
+  _setEventListeners() {
 
+    const cardLikeButton = this._element.querySelector('.element__heart');
+    const cardDeleteButton = this._element.querySelector('.element__delete');
+    const cardImage = this._element.querySelector('.element__image');
 
-  _handleDeleteClick(e){
-    e.preventDefault();
-    e.target.closest('.element').remove();
-  };
-
-  _handleImageClick(e){
-    e.preventDefault();
-    this._showImage(e);
-    this._openModalWindow(document.querySelector('.modal_type_image'));
-  };
-
-  // Слушатели Esc, клика и Enter
-  _handleEscUp = (evt) => {
-    const activePopup = document.querySelector('.modal_is-open');
-    if (evt.key === 'Escape') {
-      this._closeModalWindow(activePopup);
-    };
-  };
-
-  _handleClickAroundModalWindow = (evt) => {
-    const activePopup = document.querySelector('.modal_is-open');
-    if (evt.target.classList.contains('modal_is-open')) {
-      this._closeModalWindow(activePopup);
-    };
-  };
-
-
-  _showImage = (e) => {
-    e.preventDefault();
-
-    console.log(e.target.src)
-    console.log(this._getTemplate().querySelector('.element__image').src)
-    console.log(this._getTemplate())
-
-    document.querySelector('.modal_type_image').querySelector('img').src =e.target.src;
-    document.querySelector('.modal_type_image').querySelector('h3').textContent = e.target.closest('.element').querySelector('.element__title').textContent;
-
-    return this._element
-  };
-
-  _openModalWindow = (modalWindow) => {
-    document.querySelector('.modal_type_image').querySelector('.modal__close-button').addEventListener('click', () => {
-      this._closeModalWindow(document.querySelector('.modal_type_image'))
+    cardLikeButton.addEventListener('click', (e) => {
+      // this._handleLikeClick(e);
+      e.target.classList.toggle('element__heart_black');
     });
-    // добавляем событие keydown
-    document.addEventListener('keydown', this._handleEscUp);
-    document.addEventListener('click', this._handleClickAroundModalWindow);
-    // открываем модалку
-    modalWindow.classList.add('modal_is-open');
+
+    cardDeleteButton.addEventListener('click', (e) => {
+      // this._handleDeleteClick(e);
+      e.preventDefault();
+      e.target.closest('.element').remove();
+    });
+
+    object.closeImageShowModalButton.addEventListener('click', () => {
+      closeModalWindow(object.imageShowModal);
+    });
+
+    document.addEventListener('click', (evt) => {
+      const activePopup = document.querySelector('.modal_is-open');
+      if (evt.target.classList.contains('modal_is-open')) {
+        closeModalWindow(activePopup);
+      };
+    });
+
+    cardImage.addEventListener('click', (e) => {
+      e.preventDefault();
+      object.imageShowModal.querySelector('img').src =e.target.src;
+      object.imageShowModal.querySelector('h3').textContent = e.target.closest('.element').querySelector('.element__title').textContent;
+      openModalWindow(object.imageShowModal);
+    })
   }
-
-
-
-
-  // Открытие и закрытие модалки
-  _closeModalWindow = (modalWindow) => {
-  // удаляем событие keydown
-    document.removeEventListener('keydown', this._handleEscUp);
-    document.removeEventListener('click', this._handleClickAroundModalWindow);
-    // скрываем попап
-    modalWindow.classList.remove('modal_is-open');
-    // сбрасываем формы
-    // modalWindow.querySelector('.modal__form').reset();
-    // сбасываем валидацию
-    // cardCheckValidStyle()
-  };
-//----------------------------------------
 
   generateCard = () => {
 
@@ -90,33 +58,20 @@ export class Card {
     this._element.querySelector('.element__image').src = this._link;
     this._element.querySelector('.element__title').textContent = this._title;
 
-    // console.log(this._element)
     //Навешиваем слушателей
     // const elementTemplate = document.querySelector('.element-template');
     // const card = this._element.content.cloneNode(true);
-    const cardLikeButton = this._element.querySelector('.element__heart');
-    const cardDeleteButton = this._element.querySelector('.element__delete');
-    const cardImage = this._element.querySelector('.element__image');
-    const cardImageSource = this._element.querySelector('img');
+
+    // const cardImageSource = this._element.querySelector('img');
 
 
-    // // cardImageSource.src = data.link;
-    cardImageSource.alt = this._title;
+    // // // cardImageSource.src = data.link;
+    // cardImageSource.alt = this._title;
     // // card.querySelector('.element__title').textContent = data.name;
 
     // //   //Кнопки на карточках
-    cardLikeButton.addEventListener('click', (e) => {
-      this._handleLikeClick(e);
-    });
 
-    cardDeleteButton.addEventListener('click', (e) => {
-      this._handleDeleteClick(e);
-    });
-
-    cardImage.addEventListener('click', (e) => {
-      this._handleImageClick(e);
-    })
-
+    this._setEventListeners()
     return this._element;
   }
 }
