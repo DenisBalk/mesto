@@ -24,7 +24,7 @@ const profileName = document.querySelector('.profile__title');
 const profileText = document.querySelector('.profile__text');
 
 //Поиск кнопки закрытия в модалке
-const addCardCloseModalButton = addCardModal.querySelector('.modal__close-button');
+const closeAddCardModalButton = addCardModal.querySelector('.modal__close-button');
 const closeEditProfileModalButton = editProfileModal.querySelector('.modal__close-button');
 const closeImageShowModalButton = imageShowModal.querySelector('.modal__close-button');
 
@@ -60,17 +60,10 @@ const initialCards = [
   }
 ];
 
+
 const cardsListElement = document.querySelector('.elements');
 
 export const object = {
-    formSelector:'.modal__form',
-    inputSelector: '.modal__input',
-    inputValidClass: 'modal__input_type_valid',
-    inputErrorClass: 'modal__input_type_error',
-    submitButtonSelector: '.modal__btn-save',
-    inactiveButtonClass: 'modal__btn-disabled',
-    activeButtonClass: 'modal__btn-undisabled',
-    errorClass: 'modal__error-visible',
     openAddCardModalButton,
     openEditProfileModalButton,
     addCardModal,
@@ -84,7 +77,7 @@ export const object = {
     inputUrl,
     profileName,
     profileText,
-    addCardCloseModalButton,
+    closeAddCardModalButton,
     closeEditProfileModalButton,
     closeImageShowModalButton,
     imageInModal,
@@ -92,4 +85,15 @@ export const object = {
     initialCards,
     cardsListElement,
     cardTemplate
+  }
+
+  export const validationConfig = {
+    formSelector:'.modal__form',
+    inputSelector: '.modal__input',
+    inputValidClass: 'modal__input_type_valid',
+    inputErrorClass: 'modal__input_type_error',
+    submitButtonSelector: '.modal__btn-save',
+    inactiveButtonClass: 'modal__btn-disabled',
+    activeButtonClass: 'modal__btn-undisabled',
+    errorClass: 'modal__error-visible'
   }

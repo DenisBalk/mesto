@@ -1,17 +1,27 @@
+import { object, validationConfig } from './Constants.js';
 import { FormValidator } from './FormValidator.js';
-import { object } from './Constants.js';
+
+
+function closeByEsc(modalWindow,evt) {
+  if (evt.key === 'Escape') {
+    modalWindow.classList.remove('modal_is-open');
+
+    const cancelValidation = new FormValidator(modalWindow,validationConfig);
+    cancelValidation.resetValidationErrors();
+
+  };
+}
 
 
 // Открытие и закрытие модалки
 export const closeModalWindow = (modalWindow) => {
   // удаляем событие keydown
   document.removeEventListener('keyup', (evt) => {
-    const activePopup = document.querySelector('.modal_is-open');
-    if (evt.key === 'Escape') {
-      activePopup.remove('modal_is-open');
-
-    };
+    closeByEsc(modalWindow,evt)
   });
+
+  const cancelValidation = new FormValidator(modalWindow,validationConfig);
+  cancelValidation.resetValidationErrors();
 
   modalWindow.classList.remove('modal_is-open');
 
@@ -23,16 +33,18 @@ export const closeModalWindow = (modalWindow) => {
 export const openModalWindow = (modalWindow) => {
   // добавляем событие keydown
 
-
   document.addEventListener('keyup', (evt) => {
+    closeByEsc(modalWindow,evt)
+  });
 
-    if (evt.key === 'Escape') {
+  modalWindow.classList.add('modal_is-open');
 
-      modalWindow.classList.remove('modal_is-open');;
+  document.addEventListener('click', (evt) => {
+    const activePopup = document.querySelector('.modal_is-open');
+    if (evt.target.classList.contains('modal_is-open')) {
+      closeModalWindow(activePopup);
     };
   });
 
-  // открываем модалку
-  modalWindow.classList.add('modal_is-open');
-
 }
+
